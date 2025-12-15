@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Анастасия Снегирева | Нутрициолог & Биохакер</title>
-    <!-- Загрузка Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- КОНФИГУРАЦИЯ TAILWIND CSS: Здесь задаются пользовательские цвета и настройки фреймворка -->
+<!-- КОНФИГУРАЦИЯ TAILWIND CSS: Здесь задаются пользовательские цвета и настройки фреймворка -->
     <script>
         tailwind.config = {
             theme: {
