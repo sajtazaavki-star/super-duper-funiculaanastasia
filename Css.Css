@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анастасия Снегирева | Нутрициолог & Биохакер</title>
+    <!-- Загрузка Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- КОНФИГУРАЦИЯ TAILWIND CSS: Здесь задаются пользовательские цвета и настройки фреймворка -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        turquoise: {
+                            50: '#f0fdff',
+                            100: '#ccfbfd',
+                            200: '#99f6fb',
+                            300: '#5eead9',
+                            400: '#2dd4bf',
+                            500: '#14b8a6', // Основной бирюзовый
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                            950: '#042f2e',
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ======= НАЧАЛО БЛОКА CSS: Здесь все пользовательские стили ======= -->
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #14b8a6, #2dd4bf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-premium {
+            background-color: #f8fafc;
+        }
+        
+        /* Анимации */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hover-scale {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 30px -10px rgba(20, 184, 166, 0.2);
+        }
+
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+        .delay-400 { transition-delay: 0.4s; }
+        .delay-500 { transition-delay: 0.5s; }
+
+        /* Стили для квиза */
+        .quiz-option {
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+        .quiz-option:active {
+            transform: scale(0.98);
+        }
+        .quiz-option:hover {
+            background-color: #ccfbfd;
+            border-color: #14b8a6;
+        }
+        .quiz-content {
+            transition: opacity 0.3s ease-in-out;
+        }
+        .fade-out {
+            opacity: 0;
+        }
+        
+        /* Стили для карточек событий */
+        .event-card {
+            transition: all 0.3s ease;
+        }
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(20, 184, 166, 0.15);
+        }
+    </style>
+    <!-- ======== КОНЕЦ БЛОКА CSS ======== -->
+</head>
