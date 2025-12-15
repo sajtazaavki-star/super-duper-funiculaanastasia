@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анастасия Снегирева | Нутрициолог & Биохакер</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        turquoise: {
+                            50: '#f0fdff',
+                            100: '#ccfbfd',
+                            200: '#99f6fb',
+                            300: '#5eead9',
+                            400: '#2dd4bf',
+                            500: '#14b8a6', // Основной бирюзовый
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                            950: '#042f2e',
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #14b8a6, #2dd4bf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-premium {
+            background-color: #f8fafc;
+        }
+        
+        /* Анимации */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hover-scale {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 30px -10px rgba(20, 184, 166, 0.2);
+        }
+
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+        .delay-400 { transition-delay: 0.4s; }
+        .delay-500 { transition-delay: 0.5s; }
+
+        /* Стили для квиза */
+        .quiz-option {
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+        .quiz-option:active {
+            transform: scale(0.98);
+        }
+        .quiz-option:hover {
+            background-color: #ccfbfd;
+            border-color: #14b8a6;
+        }
+        .quiz-content {
+            transition: opacity 0.3s ease-in-out;
+        }
+        .fade-out {
+            opacity: 0;
+        }
+        
+        /* Стили для карточек событий */
+        .event-card {
+            transition: all 0.3s ease;
+        }
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(20, 184, 166, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-premium text-slate-800 antialiased">
+
+    <!-- Header / Hero Section -->
+    <header class="relative overflow-hidden bg-white pb-10">
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-turquoise-500 to-turquoise-300"></div>
+        <!-- Декоративные элементы -->
+        <div class="absolute top-20 right-0 w-64 h-64 bg-turquoise-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+        <div class="absolute bottom-0 left-10 w-64 h-64 bg-teal-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+
+        <div class="container mx-auto px-6 pt-16 text-center md:text-left md:flex md:items-center md:justify-center md:gap-16 max-w-6xl relative z-10">
+            
+            <!-- Photo Section -->
+            <div class="flex justify-center md:justify-end md:w-5/12 fade-in-up visible">
+                <div class="relative w-72 h-72 md:w-96 md:h-96 group">
+                    <div class="absolute inset-0 bg-turquoise-200 rounded-full blur-2xl opacity-60 transform translate-y-6 group-hover:opacity-80 transition-opacity duration-500"></div>
+                    <!-- МЕСТО ДЛЯ ВАШЕЙ ФОТОГРАФИИ: Измените 'src="image.png"' на URL вашего нового фото. -->
+                    <!-- *** ИСПОЛЬЗУЙТЕ ИМЯ ЗАГРУЖЕННОГО ФАЙЛА, ЧТОБЫ ГАРАНТИРОВАТЬ РАБОТУ *** -->
+                    <img src="44F6AD70-2742-4E40-A169-66A07F953B9E.png" alt="Анастасия Снегирева" class="relative w-full h-full object-cover rounded-full border-4 border-white shadow-2xl z-10 transition-transform duration-500 group-hover:scale-105">
+                    
+                    <!-- Badge -->
+                    <div class="absolute bottom-6 right-6 bg-white px-5 py-3 rounded-full shadow-xl z-20 flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
+                        <i class="fas fa-check-circle text-turquoise-500 text-xl"></i>
+                        <span class="text-sm font-bold text-slate-700">Эксперт</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text Info -->
+            <div class="mt-12 md:mt-0 md:w-7/12 fade-in-up delay-100 visible">
+                <p class="text-turquoise-600 font-bold tracking-widest text-sm uppercase mb-4">Промоутер премиального бренда Agenyz</p>
+                <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 mb-4 leading-tight">
+                    Анастасия <br> <span class="gradient-text">Снегирева</span>
+                </h1>
+                <p class="text-2xl text-slate-600 mb-8 font-medium">23 года | Нутрициолог | Биохакер</p>
+                
+                <div class="flex flex-wrap justify-center md:justify-start gap-3 mb-10">
+                    <span class="px-5 py-2 bg-turquoise-50 text-turquoise-700 rounded-full text-sm font-bold shadow-sm">Клеточное питание</span>
+                    <span class="px-5 py-2 bg-teal-50 text-teal-700 rounded-full text-sm font-bold shadow-sm">Здоровье</span>
+                    <span class="px-5 py-2 bg-slate-100 text-slate-600 rounded-full text-sm font-bold shadow-sm">Красота</span>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <button onclick="scrollToSection('quiz-section')" class="inline-flex items-center justify-center gap-2 bg-turquoise-500 text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-turquoise-600 transition duration-300 transform hover:-translate-y-1 cursor-pointer">
+                        <i class="fas fa-clipboard-list"></i>
+                        Пройти тест здоровья
+                    </button>
+                    <button onclick="scrollToSection('contact')" class="inline-flex items-center justify-center gap-2 bg-white text-slate-900 border-2 border-slate-200 px-8 py-4 rounded-full font-bold hover:border-turquoise-500 hover:text-turquoise-600 transition duration-300 cursor-pointer">
+                        Записаться
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Pain Points Section (Задачи) -->
+    <section class="py-20 bg-white relative">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-4xl font-bold text-center mb-16 fade-in-up">
+                Знакомо ли вам <span class="gradient-text">это?</span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 flex items-start gap-6 shadow-sm hover-scale fade-in-up delay-100">
+                    <div class="bg-red-50 p-4 rounded-2xl text-red-500 shrink-0 shadow-inner">
+                        <i class="fas fa-weight text-3xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl text-slate-800 mb-2">Лишний вес</h3>
+                        <p class="text-slate-600 leading-relaxed">Не удается прийти в форму, несмотря на диеты и спорт? Вес стоит на месте или возвращается?</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 flex items-start gap-6 shadow-sm hover-scale fade-in-up delay-200">
+                    <div class="bg-indigo-50 p-4 rounded-2xl text-indigo-500 shrink-0 shadow-inner">
+                        <i class="fas fa-moon text-3xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl text-slate-800 mb-2">Проблемы со сном</h3>
+                        <p class="text-slate-600 leading-relaxed">Тяжело засыпать, часто просыпаетесь ночью, а утром чувствуете себя разбитым?</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 flex items-start gap-6 shadow-sm hover-scale fade-in-up delay-300">
+                    <div class="bg-amber-50 p-4 rounded-2xl text-amber-500 shrink-0 shadow-inner">
+                        <i class="fas fa-battery-quarter text-3xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl text-slate-800 mb-2">Нет сил на день</h3>
+                        <p class="text-slate-600 leading-relaxed">Хроническая усталость, апатия и отсутствие энергии даже для простых дел?</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 flex items-start gap-6 shadow-sm hover-scale fade-in-up delay-400">
+                    <div class="bg-pink-50 p-4 rounded-2xl text-pink-400 shrink-0 shadow-inner">
+                        <i class="fas fa-spa text-3xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl text-slate-800 mb-2">Проблемы с внешностью</h3>
+                        <p class="text-slate-600 leading-relaxed">Ломкие ногти, тусклая кожа, активное выпадение волос?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz-section" class="py-24 bg-turquoise-50 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml,%3Csvg width=%27100%27 height=%27100%27 viewBox=%270 0 100 100%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath d=%27M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM32 63c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm57-13c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 55c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM56 5c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-60 7c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1zm11 17c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1zm-7 51c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1zm55-5c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1zm28-31c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1zM30 29c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z%27 fill=%27%2314b8a6%27 fill-opacity=%270.05%27 fill-rule=%27evenodd%27/%3E%3C/svg%3E')] opacity-50"></div>
+        
+        <div class="container mx-auto px-6 max-w-3xl relative z-10">
+            <div class="bg-white rounded-[2.5rem] shadow-2xl p-8 md:p-12 fade-in-up">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Чек-ап вашего <span class="gradient-text">состояния</span></h2>
+                    <p class="text-lg text-slate-600">Ответьте на 4 простых вопроса, чтобы понять, нужна ли вашему организму поддержка.</p>
+                </div>
+
+                <!-- Quiz Container -->
+                <div id="quiz-container">
+                    <!-- Progress Bar -->
+                    <div class="mb-8 bg-slate-100 h-3 rounded-full overflow-hidden">
+                        <div id="progress-bar" class="bg-turquoise-500 h-full w-1/4 progress-bar"></div>
+                    </div>
+
+                    <!-- Question Block -->
+                    <div id="question-block" class="mb-8 quiz-content">
+                        <h3 id="question-text" class="text-xl md:text-2xl font-semibold text-slate-800 mb-6">Вопрос 1</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <button class="quiz-option border-2 border-slate-200 p-6 rounded-2xl text-lg font-bold text-slate-700 transition" onclick="handleAnswer(true)">
+                                <i class="far fa-check-circle mr-3 text-turquoise-500"></i> Да
+                            </button>
+                            <button class="quiz-option border-2 border-slate-200 p-6 rounded-2xl text-lg font-bold text-slate-700 hover:bg-red-50 hover:border-red-200 transition" onclick="handleAnswer(false)">
+                                <i class="far fa-times-circle mr-3 text-red-400"></i> Нет
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Result Block -->
+                    <div id="result-block" class="hidden text-center quiz-content">
+                        <div class="mb-6">
+                            <i id="result-icon" class="fas fa-award text-6xl text-turquoise-500 mb-4"></i>
+                            <h3 id="result-title" class="text-2xl font-bold text-slate-900 mb-3">Результат</h3>
+                            <p id="result-text" class="text-lg text-slate-600 leading-relaxed mb-8">Текст результата</p>
+                        </div>
+                        <!-- Кнопка, которая отправляет результат в WhatsApp -->
+                        <a id="result-button" href="#" target="_blank" class="inline-block bg-turquoise-500 text-white px-10 py-4 rounded-full font-bold shadow-lg hover:bg-turquoise-600 transition duration-300 animate-pulse">
+                            <i class="fab fa-whatsapp mr-2"></i> Отправить результат и записаться
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Events / Announcements -->
+    <section id="events" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="text-center mb-16 fade-in-up">
+                <span class="text-turquoise-600 font-bold tracking-widest text-sm uppercase">Расписание</span>
+                <h2 class="text-4xl font-bold text-slate-900 mt-2">Ближайшие <span class="gradient-text">события</span></h2>
+            </div>
+            
+            <!-- Events container - будет заполнен JavaScript'ом -->
+            <div id="events-container" class="grid md:grid-cols-2 gap-8">
+                <!-- Динамические карточки событий будут здесь -->
+            </div>
+
+            <div class="text-center mt-12 fade-in-up delay-400">
+                <p class="text-slate-600"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: My Story -->
+    <section id="my-story" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <!-- Анимированные декорации -->
+        <div class="absolute top-0 right-0 -mr-32 -mt-32 w-96 h-96 bg-turquoise-600 rounded-full opacity-10 blur-3xl animate-pulse" style="animation-duration: 4s;"></div>
+        <div class="absolute bottom-0 left-0 -ml-32 -mb-32 w-[30rem] h-[30rem] bg-teal-600 rounded-full opacity-10 blur-3xl animate-pulse animation-delay-2000" style="animation-duration: 5s;"></div>
+
+        <div class="container mx-auto px-6 max-w-4xl relative z-10">
+            <h2 class="text-4xl font-bold text-center mb-4 fade-in-up">
+                Моя <span class="text-turquoise-400">история</span> — твой путь
+            </h2>
+            <p class="text-xl text-slate-300 text-center mb-12 fade-in-up delay-100">
+                Давайте с вами познакомимся!
+            </p>
+
+            <div class="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-2xl text-left border-t-8 border-turquoise-500 hover-scale transform-gpu fade-in-up delay-200">
+                
+                <p class="text-slate-700 text-lg leading-relaxed mb-6">
+                    Меня зовут Снегирева Анастасия. Когда-то, 3 года назад, я искала помощи, потому что понимала: врачей слушать дальше просто уже нельзя.
+                </p>
+                <div class="flex items-start mb-6 gap-4 p-4 bg-turquoise-50 rounded-xl shadow-inner border border-turquoise-200 transition transform hover:scale-[1.01]">
+                    <i class="fas fa-seedling text-3xl text-turquoise-600 shrink-0 mt-1"></i>
+                    <p class="text-slate-800 text-xl font-medium italic">
+                        Я решила не сдаваться врачам, а попробовать путь восстановления здоровья без лекарств. Я начала изучать, как работает организм.
+                    </p>
+                </div>
+                <p class="text-slate-700 text-lg leading-relaxed mb-8">
+                    Я прошла путь длиной в 3 года. Сейчас я готова делиться этим с другими, такими же, какой была я когда-то, когда бегала из кабинета в кабинет и не видела выхода.
+                </p>
+                <div class="text-center pt-4 border-t border-slate-200">
+                    <button onclick="scrollToSection('contact')" class="inline-flex items-center justify-center gap-2 bg-turquoise-500 text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-turquoise-600 transition duration-300 transform hover:-translate-y-1">
+                        <i class="fas fa-arrow-right-long"></i>
+                        Запишись ко мне на консультацию и измени свою жизнь к лучшему!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6 max-w-xl text-center fade-in-up">
+            <h2 class="text-4xl font-bold text-slate-900 mb-6">Записаться на <span class="gradient-text">консультацию</span></h2>
+            <p class="text-xl text-slate-600 mb-10 leading-relaxed">
+                Сделай первый шаг к своему лучшему состоянию. Все подробности и персональный план — в личном общении.
+                <br>
+                <span class="inline-block mt-4 px-4 py-2 bg-red-50 text-red-500 text-sm font-bold uppercase rounded-full tracking-wider shadow-sm animate-pulse">
+                    ⚠️ Количество мест ограничено
+                </span>
+            </p>
+
+            <div class="flex flex-col gap-5 mb-12">
+                <!-- WhatsApp Button -->
+                <a href="https://wa.me/79242477977" target="_blank" class="flex items-center justify-center gap-4 w-full bg-[#25D366] text-white py-5 rounded-2xl font-bold text-xl shadow-md hover:shadow-xl hover:brightness-110 transition transform hover:-translate-y-1 group">
+                    <i class="fab fa-whatsapp text-3xl group-hover:rotate-12 transition"></i>
+                    Написать в WhatsApp
+                </a>
+
+                <!-- Telegram Button -->
+                <a href="https://t.me/+79242477977" target="_blank" class="flex items-center justify-center gap-4 w-full bg-[#0088cc] text-white py-5 rounded-2xl font-bold text-xl shadow-md hover:shadow-xl hover:brightness-110 transition transform hover:-translate-y-1 group">
+                    <i class="fab fa-telegram-plane text-3xl group-hover:-rotate-12 transition-transform"></i>
+                    Написать в Telegram
+                </a>
+            </div>
+
+            <div class="pt-8 border-t-2 border-slate-100">
+                <p class="text-slate-500 text-base mb-3">Телефон для связи:</p>
+                <div class="flex items-center justify-center gap-3 cursor-pointer group" onclick="copyToClipboard('+79242477977')">
+                    <p class="text-2xl font-bold text-slate-800 font-mono group-hover:text-turquoise-600 transition">+7 (924) 247-79-77</p>
+                    <i class="far fa-copy text-slate-400 text-xl group-hover:text-turquoise-500 transition transform group-hover:scale-110" title="Скопировать"></i>
+                </div>
+                <p id="copy-feedback" class="text-turquoise-500 text-sm font-medium mt-2 opacity-0 transition duration-300">Номер скопирован!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-50 py-8 text-center text-slate-500 text-sm">
+        <div class="container mx-auto px-6">
+            <p class="mb-2 font-bold text-slate-700">Анастасия Снегирева</p>
+            <p>© 2025 Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- ДАННЫЕ ДЛЯ РЕДАКТИРОВАНИЯ: События ---
+        // Чтобы изменить список событий, просто отредактируйте этот массив (eventData).
+        // type: "Вебинар" или "Марафон"
+        // status: "Скоро" или "Идет набор"
+        // title, description: текст события
+        // buttonText: Текст на кнопке (например, "Записаться", "Узнать")
+        // typeColor: Указывает цвет карточки. Используйте один из доступных классов:
+        // 'turquoise', 'teal', 'indigo', 'pink', 'amber'
+        const eventData = [
+            
+            {
+                type: "Марафон",
+                status: "Идет набор",
+                title: "Биохакинг: Перезагрузка за 14 дней",
+                description: "2-недельная программа очищения и восстановления организма. Групповая поддержка, заметный результат через 14 дней.",
+                typeColor: "teal", // <-- Измените цвет здесь
+                buttonText: "Занять место"
+            },
+            {
+                type: "Встреча",
+                status: "Воскресенье 14.12.2025 г. Артём",
+                title: "Выставка-дегустация здоровое поколение",
+                description: "умные подарки к новому году здесь вы найдёте полезные, вкусные, умные и даже.... Необычные подарки для здоровья молодости и красоты рады видеть вас по адресу: г. Артем ул. Кирова 39А бизнес центр лидер офис 4",
+                typeColor: "teal", // <-- Измените цвет здесь
+                buttonText: "узнать подробнее"
+            }
+        ];
+
+        // --- Функция рендеринга событий ---
+        function renderEvents() {
+            const container = document.getElementById('events-container');
+            if (!container) return;
+            container.innerHTML = ''; 
+
+            eventData.forEach((event, index) => {
+                // Используем значение из typeColor для подстановки в класс Tailwind
+                const colorClass = event.typeColor || 'turquoise'; 
+                
+                const cardHtml = `
+                    <div class="event-card bg-white p-6 rounded-3xl border border-slate-100 flex flex-col justify-between h-full fade-in-up delay-${(index + 1) * 100}" onclick="scrollToSection('contact')">
+                        <div class="absolute top-0 left-0 w-2 h-full bg-${colorClass}-500 rounded-l-3xl"></div>
+                        <div>
+                            <div class="flex items-center gap-3 mb-4 pl-4">
+                                <span class="bg-${colorClass}-100 text-${colorClass}-700 px-3 py-1 rounded-full text-xs font-bold uppercase">${event.type}</span>
+                                <span class="text-slate-400 text-sm font-medium"><i class="far fa-calendar-alt mr-1"></i> ${event.status}</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3 pl-4">${event.title}</h3>
+                            <p class="text-slate-600 mb-6 text-sm pl-4">${event.description}</p>
+                        </div>
+                        <button onclick="scrollToSection('contact')" class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl hover:bg-${colorClass}-500 hover:text-white transition duration-300">
+                            ${event.buttonText}
+                        </button>
+                    </div>
+                `;
+                container.innerHTML += cardHtml;
+            });
+        }
+        
+        // --- Скрипт для плавной прокрутки ---
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // --- Логика Квиза ---
+        const quizQuestions = [
+            "Вам тяжело просыпаться по утрам, даже после долгого сна?",
+            "Чувствуете ли вы сонливость и упадок сил в середине дня?",
+            "Есть ли у вас лишний вес, который сложно сбросить?",
+            "Замечаете ли вы, что волосы стали более ломкими или выпадают?"
+        ];
+        let currentQuestionIndex = 0;
+        let yesAnswersCount = 0;
+
+        const questionTextElement = document.getElementById('question-text');
+        const progressBarElement = document.getElementById('progress-bar');
+        const questionBlockElement = document.getElementById('question-block');
+        const resultBlockElement = document.getElementById('result-block');
+        const resultTitleElement = document.getElementById('result-title');
+        const resultTextElement = document.getElementById('result-text');
+        const resultIconElement = document.getElementById('result-icon');
+        const resultButtonElement = document.getElementById('result-button');
+
+        function updateQuiz() {
+            // Анимация исчезновения
+            questionBlockElement.classList.add('fade-out');
+            
+            setTimeout(() => {
+                if (currentQuestionIndex < quizQuestions.length) {
+                    questionTextElement.textContent = quizQuestions[currentQuestionIndex];
+                    const progress = ((currentQuestionIndex + 1) / quizQuestions.length) * 100;
+                    progressBarElement.style.width = `${progress}%`;
+                    questionBlockElement.classList.remove('fade-out'); // Появление нового вопроса
+                } else {
+                    showResult();
+                }
+            }, 300); // Задержка для анимации
+        }
+
+        function handleAnswer(isYes) {
+            if (isYes) {
+                yesAnswersCount++;
+            }
+            currentQuestionIndex++;
+            updateQuiz();
+        }
+
+        function showResult() {
+            questionBlockElement.classList.add('hidden');
+            resultBlockElement.classList.remove('hidden');
+            progressBarElement.parentElement.classList.add('hidden');
+
+            let resultTitle = "";
+            let resultText = "";
+            
+            if (yesAnswersCount <= 1) {
+                resultIconElement.className = "fas fa-shield-alt text-6xl text-turquoise-500 mb-4";
+                resultTitle = "Хороший потенциал!";
+                resultText = "Ваш организм справляется неплохо, но есть моменты, которые можно улучшить для максимальной энергии и красоты. Профилактика — лучшее решение.";
+            } else if (yesAnswersCount <= 3) {
+                resultIconElement.className = "fas fa-exclamation-triangle text-6xl text-yellow-500 mb-4";
+                resultTitle = "Организму нужна поддержка";
+                resultText = "Ваше тело подает явные сигналы SOS. Игнорирование этих симптомов может привести к более серьезным проблемам. Пора заняться клеточным питанием.";
+            } else {
+                resultIconElement.className = "fas fa-battery-empty text-6xl text-red-500 mb-4";
+                resultTitle = "Требуется срочная перезагрузка!";
+                resultText = "Ваши ресурсы на исходе. Хроническая усталость и проблемы с внешностью — это крик организма о помощи. Вам необходим комплексный план восстановления.";
+            }
+
+            resultTitleElement.textContent = resultTitle;
+            resultTextElement.textContent = resultText;
+            
+            // Формируем ссылку для WhatsApp с готовым текстом, включая результат
+            const whatsappNumber = "79242477977";
+            const message = `Привет, Анастасия! Я прошла тест на сайте. Мой результат: "${resultTitle}" (Ответов "Да": ${yesAnswersCount}/4). Хочу записаться на консультацию и получить план восстановления.`;
+            const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            
+            resultButtonElement.href = whatsappLink;
+        }
+
+        // Инициализация
+        document.addEventListener("DOMContentLoaded", () => {
+            renderEvents(); // Запускаем рендеринг событий
+            // Инициализация квиза
+            questionTextElement.textContent = quizQuestions[0];
+            const progress = ((currentQuestionIndex + 1) / quizQuestions.length) * 100;
+            progressBarElement.style.width = `${progress}%`;
+
+            // --- Логика Анимации при скролле ---
+            const fadeElements = document.querySelectorAll('.fade-in-up');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeElements.forEach(el => observer.observe(el));
+        });
+
+
+        // --- Логика Копирования ---
+        function copyToClipboard(text) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showCopyFeedback();
+                }).catch(err => {
+                    console.error('Не удалось скопировать: ', err);
+                    fallbackCopyTextToClipboard(text);
+                });
+            } else {
+                fallbackCopyTextToClipboard(text);
+            }
+        }
+
+        function fallbackCopyTextToClipboard(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) showCopyFeedback();
+            } catch (err) {
+                console.error('Fallback copy failed', err);
+            }
+            document.body.removeChild(textArea);
+        }
+
+        function showCopyFeedback() {
+            const feedback = document.getElementById('copy-feedback');
+            feedback.style.opacity = '1';
+            setTimeout(() => {
+                feedback.style.opacity = '0';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
